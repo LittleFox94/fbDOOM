@@ -32,6 +32,8 @@ static uint32_t basetime = 0;
 
 int I_GetTicks(void)
 {
+    static int ticks = 0;
+    return ++ticks;
     struct timeval  tp;
     struct timezone tzp;
   
@@ -75,7 +77,7 @@ int I_GetTimeMS(void)
 void I_Sleep(int ms)
 {
     //SDL_Delay(ms);
-    usleep (ms * 1000);    
+    //usleep (ms * 1000);
 }
 
 void I_WaitVBL(int count)

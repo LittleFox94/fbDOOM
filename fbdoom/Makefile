@@ -16,12 +16,12 @@ endif
 #LIBS+=-lXext -lX11 -lnsl -lm -lSDL
 #CFLAGS+=-Wunused-const-variable=0 
 #CFLAGS+=-fsanitize=address
-OBJS+=$(OBJDIR)/i_video_fbdev.o
-OBJS+=$(OBJDIR)/i_input_tty.o
+OBJS+=$(OBJDIR)/i_video_lf_os.o
+OBJS+=$(OBJDIR)/i_input_io_pc.o
 
 CC=$(SYSROOT)/bin/clang
 OBJCOPY=$(SYSROOT)/bin/llvm-objcopy
-CFLAGS+=-O3 --sysroot=$(SYSROOT)
+CFLAGS+=-O3 -fstack-protector-all -mstackrealign --sysroot=$(SYSROOT)
 LDFLAGS+=--sysroot=$(SYSROOT)
 CFLAGS+=-Wall -DUSEASM -DWAD_COMPILED_IN
 LIBS+=-lm -lc

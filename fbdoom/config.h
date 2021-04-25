@@ -10,7 +10,7 @@
 #define HAVE_INTTYPES_H 1
 
 /* Define to 1 if you have the `ioperm' function. */
-#undef HAVE_IOPERM
+#define HAVE_IOPERM 1
 
 /* Define to 1 if you have the `amd64' library (-lamd64). */
 #undef HAVE_LIBAMD64
@@ -19,7 +19,7 @@
 #undef HAVE_LIBI386
 
 /* Define to 1 if you have the `m' library (-lm). */
-#undef HAVE_LIBM
+#define HAVE_LIBM 1
 
 /* Define to 1 if you have the `png' library (-lpng). */
 #undef HAVE_LIBPNG

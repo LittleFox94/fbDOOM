@@ -704,6 +704,10 @@ char *D_FindIWAD(int mask, GameMission_t *mission)
     int iwadparm;
     int i;
 
+#ifdef WAD_COMPILED_IN
+    return "DOOM1.WAD";
+#endif
+
     // Check for the -iwad parameter
 
     //!

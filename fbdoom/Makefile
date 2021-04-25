@@ -5,7 +5,7 @@
 # $Log:$
 #
 
-CROSS_COMPILE ?= #arm-linux-gnueabihf-
+NOSDL = 1
 
 ifeq ($(V),1)
 	VB=''
@@ -19,9 +19,10 @@ endif
 OBJS+=$(OBJDIR)/i_video_fbdev.o
 OBJS+=$(OBJDIR)/i_input_tty.o
 
-CC=$(CROSS_COMPILE)gcc  # gcc or g++
-CFLAGS+=-ggdb3 -Os
-LDFLAGS+=-Wl,--gc-sections
+CC=$(SYSROOT)/bin/clang
+OBJCOPY=$(SYSROOT)/bin/llvm-objcopy
+CFLAGS+=-O3 --sysroot=$(SYSROOT)
+LDFLAGS+=--sysroot=$(SYSROOT)
 CFLAGS+=-Wall -DUSEASM -DWAD_COMPILED_IN
 LIBS+=-lm -lc
 

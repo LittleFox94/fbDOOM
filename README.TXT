@@ -2,16 +2,18 @@
 = fbDOOM =
 ================
 
-Adaptation of the original DOOM
-to be easily portable to framebuffer devices with minimal depenencies.
-Runs on:
-* Plain desktop Linux framebuffer,
-* Siglent SSA 3021X Spectrum Analyzer,
-* Frosted OS
+Adapted to run on LF OS.
+
+Uses a framebuffer thats just a pointer to memory and a given pixel size.
+
+For input, this does ioperm()/inb()-style stuff to directly read PC keyboard controller.
+
+WAD file is compiled into the binary, so no filesystem is needed.
 
 To build (example):
 * cd fbdoom
-* make CROSS_COMPILE=arm-linux-gnueabihf-
+* grab a WAD file to compile in and place it at DOOM1.WAD
+* make SYSROOT=$pathToLFOSToolchain
 
 
 Original readme

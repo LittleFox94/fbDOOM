@@ -32,8 +32,6 @@ static uint32_t basetime = 0;
 
 int I_GetTicks(void)
 {
-    static int ticks = 0;
-    return ++ticks;
     struct timeval  tp;
     struct timezone tzp;
   

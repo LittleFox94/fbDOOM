@@ -44,7 +44,7 @@
 #include "w_wad.h"
 #include "z_zone.h"
 
-#include <kernel/syscalls.h>
+#include <sys/syscalls.h>
 #include <sys/io.h>
 
 int vanilla_keyboard_mapping = 1;
